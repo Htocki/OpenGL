@@ -23,8 +23,10 @@ find_package (Qt5
   REQUIRED
 )
 
-message ("!!! ${Qt5Core_FOUND}")
-message ("!!! ${Qt5Widgets_FOUND}")
+message ("!!! Qt5Core_FOUND: ${Qt5Core_FOUND}")
+message ("!!! Qt5Widgets_FOUND: ${Qt5Widgets_FOUND}\n")
+message ("!!! Qt5Core_INCLUDE_DIRS: ${Qt5Core_INCLUDE_DIRS}")
+message ("!!! Qt5Widgets_INCLUDE_DIRS: ${Qt5Widgets_INCLUDE_DIRS}\n")
 
 set (CMAKE_AUTOMOC ON)
 set (CMAKE_AUTORCC ON)
@@ -38,11 +40,16 @@ target_link_libraries (
     ${Qt5Widgets_LIBRARIES}
 )
 
+include_directories (${Qt5Widgets_INCLUDE_DIRS})
+include_directories (${Qt5Core_INCLUDE_DIRS})
+
 target_include_directories (
   ${PROJECT_NAME}
-    PUBLIC
-      ${Qt5Core_INCLUDE_DIRS}
-      ${Qt5Widgets_INCLUDE_DIRS}
+    PUBLIC 
+      $<INSTALL_INTERFACE:include>    
+      $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    PRIVATE
+      ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
 
