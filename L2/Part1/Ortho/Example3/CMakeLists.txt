@@ -1,6 +1,6 @@
 cmake_minimum_required (VERSION 3.17)
 
-project ("Example3")
+project ("Ortho-Example3")
 
 add_executable (${PROJECT_NAME} "src/Main.cpp")
 
