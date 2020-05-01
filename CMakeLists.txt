@@ -14,4 +14,6 @@ add_subdirectory ("L2/Part1/Linestrip")
 add_subdirectory ("L2/Part1/Ortho")
 add_subdirectory ("L2/Part1/Triangles")
 add_subdirectory ("L2/Part1/Whiteline")
+
+add_subdirectory ("L2/Part2/AmbientSphere")
 add_subdirectory ("L2/Part2/Sphere")
