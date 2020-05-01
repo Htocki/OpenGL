@@ -9,6 +9,8 @@ endif ()
 add_subdirectory ("L1/Part1/Example2")
 add_subdirectory ("L1/Part1/OpenGLSource")
 
+add_subdirectory ("L1/Part2/Example1")
+
 add_subdirectory ("L2/Part1/Ellipse")
 add_subdirectory ("L2/Part1/Grid")
 add_subdirectory ("L2/Part1/Hyperbola")
