@@ -6,6 +6,9 @@ if (CMAKE_COMPILER_IS_GNUCXX)
   add_definitions (-Wall -pedantic -std=gnu++2a)
 endif ()
 
+add_subdirectory ("L1/Part1/Example2")
+add_subdirectory ("L1/Part1/OpenGLSource")
+
 add_subdirectory ("L2/Part1/Ellipse")
 add_subdirectory ("L2/Part1/Grid")
 add_subdirectory ("L2/Part1/Hyperbola")
