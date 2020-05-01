@@ -57,7 +57,7 @@ int main(int argc, char** argv) {
   glutInitDisplayMode(GLUT_RGB);
   glutInitWindowPosition(200, 200);
   glutInitWindowSize(400, 400);
-  glutCreateWindow("Hyberbola");
+  glutCreateWindow("Hyperbola-Example2");
   glClearColor(1.0, 0.5, 0.0, 1.0);
   glutDisplayFunc(Draw);
   glutMainLoop();

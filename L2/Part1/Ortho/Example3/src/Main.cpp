@@ -16,7 +16,7 @@ int main(int argc, char** argv) {
   glutInitDisplayMode(GLUT_RGB);
   glutInitWindowPosition(200, 200);
   glutInitWindowSize(240, 300);
-  glutCreateWindow("Example3");
+  glutCreateWindow("Ortho-Example3");
   gluOrtho2D(0.0, 100.0, 0.0, 100.0);
   glClearColor(0.0, 0.0, 0.5, 1.0);
   glutDisplayFunc(Draw);

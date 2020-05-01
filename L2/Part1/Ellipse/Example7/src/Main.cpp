@@ -40,7 +40,7 @@ int main(int argc, char** argv) {
   glutInitDisplayMode(GLUT_RGB);
   glutInitWindowPosition(200, 200);
   glutInitWindowSize(400, 400);
-  glutCreateWindow("Ellipse");
+  glutCreateWindow("Ellipse-Example7");
   glClearColor(1.0, 1.0, 1.0, 1.0);
   glutDisplayFunc(Draw);
   glutMainLoop();
