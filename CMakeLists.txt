@@ -20,3 +20,5 @@ add_subdirectory ("L2/Part1/Whiteline")
 
 add_subdirectory ("L2/Part2/Teapot")
 add_subdirectory ("L2/Part2/Sphere")
+
+add_subdirectory ("L3/Part1")
