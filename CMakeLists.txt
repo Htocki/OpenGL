@@ -17,4 +17,5 @@ add_subdirectory ("L2/Part1/Whiteline")
 
 add_subdirectory ("L2/Part2/AmbientSphere")
 add_subdirectory ("L2/Part2/DiffuseSphere")
+add_subdirectory ("L2/Part2/SpecularSphere")
 add_subdirectory ("L2/Part2/Sphere")
