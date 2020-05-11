@@ -2,12 +2,11 @@
 
 #include <cmath>
 
-constexpr double pi { 3.1415 };
+constexpr double pi { 3.1415 }, h { 0.00001 }, hpr { 0.0001 };
 constexpr std::size_t size { 4 };
 
 double x { 0 }, A { 0 }, B { 0 }, a { 30 };
 double Y[size], y[size];
-double h { 0.00001 }, hpr { 0.0001 };
 
 double Ff(int i, double *x, double *y) {
   switch (i) {
@@ -41,7 +40,7 @@ void MethodRungeKutta(double *x, double *y0, double *y, double h) {
   double z[size], k1[size], k2[size], k3[size], k4[size];
 
   Right(x, y0, k1);
-  *x = *x + h / 2;
+  *x += h / 2;
 
   for (std::size_t i { 0 }; i < size; ++i) {
     z[i] = y0[i] + h * k1[i] / 2;
@@ -52,7 +51,7 @@ void MethodRungeKutta(double *x, double *y0, double *y, double h) {
     z[i] = y0[i] + h * k2[i] / 2;
   }
   Right(x, z, k3);
-  *x = *x + h / 2;
+  *x += h / 2;
 
   for (std::size_t i { 0 }; i < size; ++i) {
     z[i] = y0[i] + h * k3[i] / 2;
@@ -70,21 +69,24 @@ void RenderScene() {
   glClear(GL_COLOR_BUFFER_BIT);
   glColor3d(1.0, 0.0, 0.0);
   glBegin(GL_LINES);
-    glVertex2d(0.0, 0.0);
-    glVertex2d(2.0, 0.0);
+    glVertex2d(0.001, 0.001);
+    glVertex2d(2.0, 0.001);
   glEnd();
   glBegin(GL_LINES);
-    glVertex2d(0.0, 0.0);
-    glVertex2d(0.0, 2.0);
+    glVertex2d(0.001, 0.001);
+    glVertex2d(0.001, 2.0);
   glEnd();
 
-  A = 0.5;
-  B = 0.04;
+  // Значения для пункта B:
+  a = 45;
+  A = 0.1;
+  B = 0.2;
+
   double x0 { 0 };
   x = x0;
   y[3] = Y[3];
 
-  for (std::size_t i { 1 }; i < size; ++i) {
+  for (std::size_t i { 1 }; i <= size; ++i) {
     A *= i;
     B *= i;
     a *= pi / 180;
@@ -92,7 +94,7 @@ void RenderScene() {
     Y[1] = std::sin(a);
     Y[2] = 0;
     Y[3] = 0;
-    glColor3d(1 - 0.4 / i, 0.4 / i, 0.4 + 0.4 / i);
+    glColor3f(1 - 0.4 / i, 0.4 / i, 0.4 + 0.4 / i);
     x = x0 = 0;
     y[3] = Y[3];
 
