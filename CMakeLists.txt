@@ -22,4 +22,5 @@ add_subdirectory ("L2/Part2/Teapot")
 add_subdirectory ("L2/Part2/Sphere")
 
 add_subdirectory ("L3/Part1")
+add_subdirectory ("L3/Part2")
 add_subdirectory ("L3/Part4")
